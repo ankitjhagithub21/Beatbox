@@ -12,7 +12,9 @@
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
 }
-
+.song{
+    background-image: url(music.gif);
+}
 
 @keyframes rotation {
     0% {

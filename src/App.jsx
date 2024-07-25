@@ -1,42 +1,23 @@
-import React, { useEffect, useState } from 'react'
 import "./App.css"
-import Slider from './components/Slider'
-import Loader from './components/Loader'
 import Player from './components/Player'
-import { useSelector } from 'react-redux'
 import SearchBar from './components/SearchBar'
+import {BrowserRouter,Routes,Route} from "react-router-dom"
+import Home from './components/Home'
+import SongDetails from './components/SongDetails'
+
 const App = () => {
-  const [songs,setSongs] = useState([])
-  const [loading,setLoading] = useState(true)
-  const{searchTerm} = useSelector(state=>state.app)
-  const fetchSongs = async() =>{
-          try{
-            setLoading(true)
-            const res =  await fetch(`https://saavn.dev/api/search/songs?query=${searchTerm}`)
-            const data = await res.json()
-            console.log(data)
-            setSongs(data.data.results)
-           
-          }catch(error){
-            console.log(error)
-          }finally{
-            setLoading(false)
-          }
-  }
-  useEffect(()=>{
-   fetchSongs()
-   
-  },[searchTerm])
+ 
   return (
-    <div>
+    <BrowserRouter>
       <SearchBar/>
-      {
-        loading ? <Loader/> : <Slider songs={songs}/>
-      }
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/song/:id' element={<SongDetails/>}/>
+      </Routes>
      
 
       <Player/>
-    </div>
+    </BrowserRouter>
   )
 }
 

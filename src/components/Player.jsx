@@ -11,8 +11,8 @@ const Player = () => {
 
       <AudioPlayer
 
-        src={currSong.src}
-
+        src={currSong.downloadUrl[2].url}
+        
 
       />
 
