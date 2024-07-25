@@ -33,6 +33,8 @@ const App = () => {
       {
         loading ? <Loader/> : <Slider songs={songs}/>
       }
+     
+
       <Player/>
     </div>
   )
