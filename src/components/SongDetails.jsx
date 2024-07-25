@@ -12,7 +12,7 @@ const SongDetails = () => {
   <section className='py-24 px-4'>
       <div className='container mx-auto mb-5  flex flex-wrap'>
       <div className='md:w-1/2 w-full'>
-        <img src={currSong?.image[2].url}  alt={currSong?.name}  className='rounded-lg mx-auto' />
+        <img src={currSong?.image[2]?.url}  alt={currSong?.name}  className='rounded-lg mx-auto' />
       </div>
       <div>
         <h2 className='text-2xl font-bold mt-5'>{currSong?.name}</h2>
@@ -26,8 +26,14 @@ const SongDetails = () => {
         currSong?.artists.primary.map((artist)=>{
           return <div className='flex flex-col gap-1 items-center cursor-pointer' key={artist.id}>
             
-           <img src={artist.image[2].url} alt={artist.name} className='min-w-32 w-32 rounded-full object-contain' />
-           <p>{artist.name}</p>
+{
+  artist?.image[2]?.url &&            <>
+  
+  <img src={artist?.image[2]?.url} alt={artist.name} className='min-w-32 w-32 rounded-full object-contain' />
+  <p>{artist.name}</p>
+  </>
+}
+          
           </div>
         })
       }
