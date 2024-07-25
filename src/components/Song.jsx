@@ -1,23 +1,18 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { setCurrSrc } from '../app/appSlice'
+import { setCurrSong } from "../app/appSlice"
 
-const Song = ({ imgSrc, name, songSrc }) => {
-  const dispatch = useDispatch()
-  const handleClick = () => {
-
-    dispatch(setCurrSrc(songSrc))
-  }
+const Song = ({song}) => {
+    const dispatch = useDispatch()
   return (
-    <div onClick={handleClick} className='lg:w-1/6 md:w-1/4 w-1/2 p-3'>
-
-      <div className='cursor-pointer border  relative rounded-lg overflow-hidden '>
-        <img src={imgSrc} alt={name} className=' hover:scale-110 transition duration-300' loading='lazy' />
-       
+    <div className='lg:w-[220px] md:w-[150px] w-[120px]  cursor-pointer p-3' onClick={()=>dispatch(setCurrSong({
+        name:song.name,
+        src:song.downloadUrl[2].url,
+        image:song.image[2].url,
+        artist:song.artists.primary[0].name
+      }))}>
+        <img src={song.image[2].url} alt={song.name}  className='rounded-lg'/>
       </div>
-
-
-    </div>
   )
 }
 
