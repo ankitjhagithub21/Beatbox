@@ -2,16 +2,21 @@ import React, { useState } from 'react'
 import { setSearchTerm } from '../app/appSlice'
 import { useDispatch } from "react-redux"
 import { GoSearch } from "react-icons/go"
+import {useNavigate} from "react-router-dom"
+
 
 const SearchBar = () => {
     const [query, setQuery] = useState('')
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const handleSubmit = (event) => {
         event.preventDefault()
         dispatch(setSearchTerm(query))
+        navigate("/")
+      
     }
     return (
-        <div className='fixed w-full p-2 top-0  bg-white flex gap-2  items-center justify-between'>
+        <div className='fixed w-full p-2 shadow top-0  bg-white flex gap-2  items-center justify-between'>
             <div className='md:flex gap-2 items-center hidden'>
                 <img src="/vite.svg" alt="logo" />
                 <h2 className='font-bold font-serif text-xl'>Beat<span className='text-red-500'>Box</span></h2>

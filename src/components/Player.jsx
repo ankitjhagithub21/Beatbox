@@ -10,7 +10,7 @@ const Player = () => {
     <div className='fixed bottom-0 w-full z-10 flex flex-col bg-gray-100'>
 
       <AudioPlayer
-
+         autoPlay={true}
         src={currSong.downloadUrl[2].url}
         
 
