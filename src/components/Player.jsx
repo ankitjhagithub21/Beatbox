@@ -17,28 +17,33 @@ const Player = () => {
   const nextSong = () => {
     if (index < songs.length) {
       setIndex(index + 1)
-      dispatch(setCurrSong(songs[index]))
+    
+    }else{
+      setIndex(0)
     }
+    dispatch(setCurrSong(songs[index]))
   }
   if (!currSong) return
   return (
-    <div className='fixed bottom-0 w-full z-10 flex flex-col bg-gray-100'>
+    <div className='fixed bottom-0 w-full  flex flex-col bg-gray-100'>
 
       <AudioPlayer
         autoPlay={true}
         src={currSong.downloadUrl}
         showJumpControls={false}
         onEnded={nextSong}
+        className='z-50'
+       
       />
-      <div className='flex items-center justify-center text-4xl gap-10 text-gray-500 fixed w-full bottom-3'>
-        <button onClick={prevSong} >
-          <MdSkipPrevious />
+     
+        <button onClick={prevSong} className='z-50 fixed left-[35vw] bottom-4'>
+          <MdSkipPrevious size={30} color='gray'/>
         </button>
 
-        <button onClick={nextSong} >
-          <MdSkipNext />
+        <button onClick={nextSong} className='z-50 fixed right-[35vw] bottom-4'>
+          <MdSkipNext  size={30} color='gray'/>
         </button>
-      </div>
+     
 
 
     </div>
