@@ -8,7 +8,9 @@ const Song = ({ song }) => {
   const navigate = useNavigate()
   const handleClick = () =>{
     dispatch(setCurrSong(song))
-    navigate(`/song/${song.id}`)
+    const arr = song.name.split(' ')
+    const songName  = arr.join("-")
+    navigate(`/song/${songName}`)
   }
   return (
     <div className='lg:w-[220px] md:w-[150px] w-[120px]  cursor-pointer p-3' onClick={handleClick}>
