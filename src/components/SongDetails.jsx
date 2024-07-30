@@ -50,13 +50,13 @@ const SongDetails = () => {
           <div className='flex items-center gap-2 overflow-x-scroll'>
             {
               currSong.artists.map((artist) => {
-                return <div className='flex flex-col gap-1 items-center  cursor-pointer hover:scale-105' key={artist.id} onClick={()=>{
+                return <div className='flex flex-col gap-1 text-center items-center  cursor-pointer hover:scale-105' key={artist.id} onClick={()=>{
                    navigate("/")
                   dispatch(setSearchTerm(artist.name))
                 }}>
 
                   {
-                    artist.image[2].url && <>
+                    artist.image[2]?.url && <>
 
                       <img src={artist.image[2].url} alt={artist.name} className='min-w-32 w-44 rounded-full object-contain' />
                       <p>{artist.name}</p>
