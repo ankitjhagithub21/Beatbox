@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { FaBookmark, FaDownload, FaSave } from "react-icons/fa"
-import { setSearchTerm } from '../app/appSlice'
+import { setCurrSong, setSearchTerm } from '../app/appSlice'
 import toast from 'react-hot-toast'
 const SongDetails = () => {
   const { currSong } = useSelector(state => state.app)
@@ -37,16 +37,18 @@ const handleAddToFav = () =>{
     favSongs.push(currSong);
     localStorage.setItem('favSongs', JSON.stringify(favSongs));
     toast.success('Song added to favorites!');
+    navigate("/favourites")
   } else {
     toast.error('Song is already in favorites!');
   }
+
 }
 
   if (!currSong) {
     return <Navigate to={"/"} />
   }
   return (
-    <section className='py-24 px-4'>
+    <section className='py-24 px-4' >
       <div className='container mx-auto mb-5  flex flex-wrap'>
         <div className='md:w-1/2 w-full'>
           <img src={currSong.image} alt={currSong.name} className='rounded-lg mx-auto' />
