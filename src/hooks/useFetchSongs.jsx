@@ -13,13 +13,14 @@ const useFetchSongs = () => {
         const data = await res.json()
        
         const songs = data.data.results.map((song)=>{
+            
             return {
                 id:song.id,
                 name:song.name,
                 year:song.year,
-                image:song.image[2].url,
+                image:song.image[song.image.length-1].url,
                 artists:song.artists.primary,
-                downloadUrl:song.downloadUrl[2].url,
+                downloadUrl:song.downloadUrl[song.downloadUrl.length-1].url,
                 
             }
             
