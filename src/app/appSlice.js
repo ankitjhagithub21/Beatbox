@@ -5,7 +5,8 @@ export const appSlice = createSlice({
   initialState:{
     currSong:null,
     searchTerm:"latest",
-    songs:null
+    songs:null,
+    songIndex:0,
    
   },
   reducers: {
@@ -20,11 +21,14 @@ export const appSlice = createSlice({
     setSongs: (state, action) => {
       state.songs = action.payload
     },
+    setSongIndex:(state,action)=>{
+      state.songIndex = action.payload
+    }
    
   },
 })
 
 
-export const { setCurrSong,setSearchTerm,setSongs } = appSlice.actions
+export const { setCurrSong,setSearchTerm,setSongs,setSongIndex } = appSlice.actions
 
 export default appSlice.reducer
