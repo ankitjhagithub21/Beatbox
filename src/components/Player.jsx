@@ -12,10 +12,10 @@ const Player = () => {
       <AudioPlayer
          autoPlay={true}
         src={currSong.downloadUrl}
-        
-
+        showJumpControls={false}
+       
       />
-
+     
     </div>
   )
 }
