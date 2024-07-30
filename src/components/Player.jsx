@@ -11,7 +11,7 @@ const Player = () => {
 
       <AudioPlayer
          autoPlay={true}
-        src={currSong.downloadUrl[2].url}
+        src={currSong.downloadUrl}
         
 
       />
