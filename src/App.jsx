@@ -7,6 +7,7 @@ import SongDetails from './components/SongDetails'
 import NotFound from "./components/NotFound"
 import SongList from "./components/SongList"
 import {Toaster} from "react-hot-toast"
+import FavSongs from "./components/FavSongs"
 
 const App = () => {
  
@@ -18,6 +19,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/song/:id' element={<SongDetails/>}/>
+        <Route path='/favourites' element={<FavSongs/>}/>
         <Route path='/*' element={<NotFound/>}/>
        
       </Routes>
