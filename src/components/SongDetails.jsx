@@ -1,9 +1,12 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { Navigate } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { Navigate, useNavigate } from 'react-router-dom'
 import { FaDownload } from "react-icons/fa"
+import { setSearchTerm } from '../app/appSlice'
 const SongDetails = () => {
   const { currSong } = useSelector(state => state.app)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
  
   const handleDownload = async () => {
     try {
@@ -47,12 +50,15 @@ const SongDetails = () => {
           <div className='flex items-center gap-2 overflow-x-scroll'>
             {
               currSong.artists.map((artist) => {
-                return <div className='flex flex-col gap-1 items-center cursor-pointer' key={artist.id}>
+                return <div className='flex flex-col gap-1 items-center  cursor-pointer hover:scale-105' key={artist.id} onClick={()=>{
+                   navigate("/")
+                  dispatch(setSearchTerm(artist.name))
+                }}>
 
                   {
                     artist.image[2].url && <>
 
-                      <img src={artist.image[2].url} alt={artist.name} className='min-w-32 w-32 rounded-full object-contain' />
+                      <img src={artist.image[2].url} alt={artist.name} className='min-w-32 w-44 rounded-full object-contain' />
                       <p>{artist.name}</p>
                     </>
                   }
