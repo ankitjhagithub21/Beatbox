@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { setSearchTerm } from '../app/appSlice'
+import { setIsOpen, setSearchTerm } from '../app/appSlice'
 import { useDispatch } from "react-redux"
 import { GoSearch } from "react-icons/go"
 import {Link, useNavigate} from "react-router-dom"
+import { FaMusic } from 'react-icons/fa'
 
 
 const SearchBar = () => {
@@ -26,6 +27,9 @@ const SearchBar = () => {
                 <GoSearch size={24} />
                 
             </form>
+            <button onClick={()=>dispatch(setIsOpen(true))}>
+                <FaMusic color='red'/>
+            </button>
         </div>
     )
 }

@@ -7,6 +7,7 @@ export const appSlice = createSlice({
     searchTerm:"latest",
     songs:null,
     songIndex:0,
+    isOpen:false
    
   },
   reducers: {
@@ -23,12 +24,15 @@ export const appSlice = createSlice({
     },
     setSongIndex:(state,action)=>{
       state.songIndex = action.payload
+    },
+    setIsOpen:(state,action)=>{
+      state.isOpen = action.payload
     }
    
   },
 })
 
 
-export const { setCurrSong,setSearchTerm,setSongs,setSongIndex } = appSlice.actions
+export const { setCurrSong,setSearchTerm,setSongs,setSongIndex,setIsOpen } = appSlice.actions
 
 export default appSlice.reducer
