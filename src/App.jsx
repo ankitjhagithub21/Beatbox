@@ -6,12 +6,13 @@ import Home from './components/Home'
 import SongDetails from './components/SongDetails'
 import NotFound from "./components/NotFound"
 import SongList from "./components/SongList"
-
+import {Toaster} from "react-hot-toast"
 
 const App = () => {
  
   return (
     <BrowserRouter>
+    <Toaster/>
       <SearchBar/>
       <SongList/>
       <Routes>
