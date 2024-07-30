@@ -27,6 +27,7 @@ const SongList = () => {
         
         <p className='text-white text-center py-3'>Developed By <a href="http://ankitjha.vercel.app/" target='_blank' className='text-blue-500 underline'>Ankit Jha</a></p>
     </div>
+    
   )
 }
 
