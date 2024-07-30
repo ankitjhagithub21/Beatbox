@@ -9,7 +9,7 @@ const useFetchSongs = () => {
   const fetchSongs = async () => {
     try {
         setLoading(true)
-        const res = await fetch(`https://saavn.dev/api/search/songs?query=${searchTerm}`)
+        const res = await fetch(`https://saavn.dev/api/search/songs?query=${searchTerm}&limit=20`)
         const data = await res.json()
        
         const songs = data.data.results.map((song)=>{
