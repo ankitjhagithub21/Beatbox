@@ -28,7 +28,7 @@ const SearchBar = () => {
                 
             </form>
             <button onClick={()=>dispatch(setIsOpen(true))}>
-                <FaMusic color='red'/>
+                <FaMusic size={18}/>
             </button>
         </div>
     )
