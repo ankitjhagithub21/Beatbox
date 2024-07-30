@@ -37,11 +37,12 @@ const handleAddToFav = () =>{
     favSongs.push(currSong);
     localStorage.setItem('favSongs', JSON.stringify(favSongs));
     toast.success('Song added to favorites!');
-    navigate("/favourites")
+   
   } else {
     toast.error('Song is already in favorites!');
   }
 
+  navigate("/favourites")
 }
 
   if (!currSong) {
