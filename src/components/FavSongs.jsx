@@ -19,11 +19,11 @@ const FavSongs = () => {
   return (
     <div className="py-24 px-4">
       <div className="container mx-auto">
-        <h2 className="text-2xl font-bold mb-5">Favorite Songs</h2>
+        <h2 className="text-2xl font-bold mb-5 text-center">Your Favorite Songs</h2>
         {favSongs.length === 0 ? (
           <p>No favorite songs added yet.</p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
             {favSongs.map((song) => (
               <div key={song.id} className="bg-white shadow-lg rounded-lg p-4 cursor-pointer hover:scale-105" onClick={()=>dispatch(setCurrSong(song))}>
                 <img src={song.image} alt={song.name} className="rounded-lg mb-4 w-full" />
