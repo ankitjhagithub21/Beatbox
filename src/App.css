@@ -3,6 +3,10 @@
 body::-webkit-scrollbar{
     display: none;
 }
+.artists::-webkit-scrollbar{
+    display: none;
+}
+
 *{
     font-family: "Roboto", sans-serif;
     outline: none;
