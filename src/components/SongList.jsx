@@ -13,7 +13,7 @@ const SongList = () => {
         <p>Song List</p>
        <button onClick={()=>dispatch(setIsOpen(false))} className='rounded-full border text-white px-3 py-1'>X</button>
        </div>
-        <div className='flex flex-col p-5 gap-3'>
+        <div className='flex flex-col p-5 gap-4'>
             {
                 songs?.map((song)=>{
                     return <div className='px-4 py-2 rounded-full flex items-center gap-2 bg-white shadow-lg cursor-pointer hover:scale-105' key={song.id} onClick={()=>dispatch(setCurrSong(song))}>

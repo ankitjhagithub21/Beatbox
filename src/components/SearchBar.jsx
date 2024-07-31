@@ -3,7 +3,7 @@ import { setIsOpen, setSearchTerm } from '../app/appSlice'
 import { useDispatch } from "react-redux"
 import { GoSearch } from "react-icons/go"
 import {Link, useNavigate} from "react-router-dom"
-import { FaMusic } from 'react-icons/fa'
+import { RiMenu3Fill } from "react-icons/ri";
 
 
 const SearchBar = () => {
@@ -24,11 +24,11 @@ const SearchBar = () => {
             </Link>
             <form className='lg:w-1/3 w-full flex items-center bg-gray-200 rounded-full px-2 py-2' onSubmit={handleSubmit}>
                 <input type="text" value={query} className='border w-full bg-transparent pl-2 outline-none' placeholder='Search song...' onChange={(e)=>setQuery(e.target.value)} required/>
-                <GoSearch size={24} />
+                <GoSearch size={24} color='gray'/>
                 
             </form>
             <button onClick={()=>dispatch(setIsOpen(true))}>
-                <FaMusic size={18}/>
+                <RiMenu3Fill size={24} color='gray'/>
             </button>
         </div>
     )
