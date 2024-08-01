@@ -25,8 +25,8 @@ const FavSongs = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
             {favSongs.map((song) => (
-              <div key={song.id} className="bg-white shadow-lg rounded-lg p-4 cursor-pointer hover:scale-105" onClick={()=>dispatch(setCurrSong(song))}>
-                <img src={song.image} alt={song.name} className="rounded-lg mb-4 w-full" />
+              <div key={song.id} className="bg-white shadow-lg rounded-lg p-4 cursor-pointer hover:scale-105" >
+                <img src={song.image} alt={song.name} className="rounded-lg mb-4 w-full" onClick={()=>dispatch(setCurrSong(song))}/>
                 <h3 className="text-xl font-bold">{song.name}</h3>
                 <p className="mt-2">Year: {song.year}</p>
                 <button

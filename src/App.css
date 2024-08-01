@@ -11,7 +11,11 @@ body::-webkit-scrollbar{
     font-family: "Roboto", sans-serif;
     outline: none;
 }
-
+.overlay{
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    border-radius: 10px;
+}
 
 .loader {
     width: 48px;

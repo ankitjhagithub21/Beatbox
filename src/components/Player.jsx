@@ -5,7 +5,7 @@ import { setCurrSong, setSongIndex } from '../app/appSlice';
 import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
 
 const Player = () => {
-  const { currSong, songs, songIndex } = useSelector(state => state.app);
+  const { currSong, songs, songIndex,pageNumber } = useSelector(state => state.app);
   const dispatch = useDispatch();
 
   const prevSong = () => {
@@ -22,6 +22,7 @@ const Player = () => {
       newIndex = songIndex + 1;
     } else {
       newIndex = 0;
+      
     }
     dispatch(setSongIndex(newIndex));
     dispatch(setCurrSong(songs[newIndex]));
