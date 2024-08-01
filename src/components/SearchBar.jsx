@@ -17,7 +17,7 @@ const SearchBar = () => {
       
     }
     return (
-        <div className='fixed w-full p-2 shadow top-0 z-50  bg-white flex gap-2  items-center justify-between'>
+        <div className='fixed w-full p-2 shadow top-0 z-10 bg-white flex gap-2  items-center justify-between'>
             <Link className='md:flex gap-2 items-center hidden' to={"/"}>
                 <img src="/vite.svg" alt="logo" />
                 <h2 className='font-bold font-serif text-xl'>Beat<span className='text-red-500'>Box</span></h2>
