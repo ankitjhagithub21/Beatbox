@@ -17,13 +17,13 @@ const SearchBar = () => {
       
     }
     return (
-        <div className='fixed w-full p-2 shadow top-0 z-10 bg-white flex gap-2  items-center justify-between'>
+        <div className='fixed w-full p-2 shadow top-0 z-10 bg-black flex gap-2  items-center justify-between'>
             <Link className='md:flex gap-2 items-center hidden' to={"/"}>
                 <img src="/vite.svg" alt="logo" />
-                <h2 className='font-bold font-serif text-xl'>Beat<span className='text-red-500'>Box</span></h2>
+                <h2 className='font-bold font-serif text-white text-xl'>Beat<span className='text-red-500'>Box</span></h2>
             </Link>
-            <form className='lg:w-1/3 w-full flex items-center bg-gray-200 rounded-full px-2 py-2' onSubmit={handleSubmit}>
-                <input type="text" value={query} className='border w-full bg-transparent pl-2 outline-none' placeholder='Search song...' onChange={(e)=>setQuery(e.target.value)} required/>
+            <form className='lg:w-1/3 border w-full flex items-center bg-[#2A2A2A] rounded-full px-2 py-2' onSubmit={handleSubmit}>
+                <input type="text" value={query} className='border w-full border-none text-white bg-transparent pl-2 outline-none' placeholder='Search song...' onChange={(e)=>setQuery(e.target.value)} required/>
                 <GoSearch size={24} color='gray'/>
                 
             </form>

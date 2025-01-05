@@ -6,7 +6,8 @@ import { setPageNumber } from "../app/appSlice";
 const Slider = ({ songs }) => {
   const dispatch = useDispatch()
   const {pageNumber} = useSelector(state=>state.app)
- 
+
+
   return (
     <div className='flex flex-col items-center gap-5 justify-center my-24 px-5 w-full'>
      
@@ -16,7 +17,7 @@ const Slider = ({ songs }) => {
        
       >
         {
-          songs.map((song,index) => {
+          songs?.map((song,index) => {
             return <Song key={song.id} song={song} index={index}/>;
           })
         }

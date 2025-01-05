@@ -1,14 +1,14 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Navigate, useNavigate } from 'react-router-dom'
-import { FaBookmark, FaDownload, FaSave } from "react-icons/fa"
-import { setCurrSong, setSearchTerm } from '../app/appSlice'
+import { FaBookmark, FaDownload} from "react-icons/fa"
+import { setSearchTerm } from '../app/appSlice'
 import toast from 'react-hot-toast'
 const SongDetails = () => {
   const { currSong } = useSelector(state => state.app)
   const dispatch = useDispatch()
   const navigate = useNavigate()
-
+ console.log(currSong)
   const handleDownload = async () => {
     try {
       const response = await fetch(currSong.downloadUrl);

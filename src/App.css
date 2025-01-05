@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+body{
+    background-color: #000000;
+}
 body::-webkit-scrollbar{
     display: none;
 }
 .artists::-webkit-scrollbar{
     display: none;
 }
+
+
 
 *{
     font-family: "Roboto", sans-serif;
@@ -50,6 +55,37 @@ body::-webkit-scrollbar{
 	border-radius: 10px;
 	background-color:white;
 }
+
+.rhap_container {
+    background: black !important;
+    
+  }
+  .rhap_time {
+      color: white !important ;
+  }   
+  
+  
+  .rhap_progress-filled,
+  .rhap_progress-indicator {
+    background-color: #1ed760 !important;
+  }
+  
+  /* .rhap_main-controls-button {
+    color: #1ed760 !important;
+  }
+  
+  .rhap_button-clear.rhap_volume-button {
+    color: #1ed760 !important;
+  } */
+  
+  .rhap_volume-bar,
+  .rhap_volume-indicator {
+    background-color: #1ed760 !important;
+  }
+  ::-webkit-scrollbar{
+    display: none;
+  }
+  
 
 @keyframes rotation {
     0% {
