@@ -31,20 +31,18 @@ const Player = () => {
   if (!currSong) return null;
 
   return (
-    <div className='fixed bottom-0 w-full flex flex-col bg-gray-100'>
+    <div className='fixed bottom-0 w-full'>
       <AudioPlayer
         autoPlay={true}
         src={currSong.downloadUrl}
         showJumpControls={false}
+        onClickNext={nextSong}
+        onClickPrevious={prevSong}
         onEnded={nextSong}
-        className='z-50'
+        showSkipControls={true}
+        
       />
-      <button onClick={prevSong} className='z-50 fixed left-[35vw] md:left-[45vw] bottom-4'>
-        <MdSkipPrevious size={30} color='gray' />
-      </button>
-      <button onClick={nextSong} className='z-50 fixed right-[35vw] md:right-[45vw] bottom-4'>
-        <MdSkipNext size={30} color='gray' />
-      </button>
+    
     </div>
   );
 };

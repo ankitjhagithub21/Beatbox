@@ -11,9 +11,9 @@ const useFetchSongs = () => {
     try {
         setLoading(true)
         const res = await fetch(`https://saavn.dev/api/search/songs?query=${searchTerm}&page=${pageNumber}&limit=10`)
-        const data = await res.json()
+        const {data} = await res.json()
        
-        const songs = data.data.results.map((song)=>{
+        const songs = data.results.map((song)=>{
             
             return {
                 id:song.id,

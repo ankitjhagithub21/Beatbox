@@ -65,8 +65,8 @@ const SongDetails = () => {
         </div>
         </div>
        <div className='mt-5'>
-       <h2 className='text-2xl my-5 font-bold '>Song Artists</h2>
-        <div className='flex items-start justify-start gap-3 overflow-x-scroll artists'>
+       <h2 className='text-2xl my-5 font-bold text-white'>Song Artists</h2>
+        <div className='flex items-start justify-start gap-5 overflow-x-scroll artists'>
           {
             currSong.artists.map((artist) => {
               return <div className='flex flex-col gap-1 text-center items-center  cursor-pointer hover:scale-105' key={artist.id} onClick={() => {
@@ -78,7 +78,7 @@ const SongDetails = () => {
                   artist.image[2]?.url && <>
 
                     <img src={artist.image[2].url} alt={artist.name} className='min-w-32 w-36 rounded-full object-contain' />
-                    <p>{artist.name}</p>
+                    <p className='text-white'>{artist.name}</p>
                   </>
                 }
 
