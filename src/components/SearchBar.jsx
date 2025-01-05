@@ -24,11 +24,11 @@ const SearchBar = () => {
             </Link>
             <form className='lg:w-1/3 border w-full flex items-center bg-[#2A2A2A] rounded-full px-2 py-2' onSubmit={handleSubmit}>
                 <input type="text" value={query} className='border w-full border-none text-white bg-transparent pl-2 outline-none' placeholder='Search song...' onChange={(e)=>setQuery(e.target.value)} required/>
-                <GoSearch size={24} color='gray'/>
+                <GoSearch size={24} color='white'/>
                 
             </form>
             <button onClick={()=>dispatch(setIsOpen(true))}>
-                <RiMenu3Fill size={24} color='gray'/>
+                <RiMenu3Fill size={25} color='white'/>
             </button>
         </div>
     )

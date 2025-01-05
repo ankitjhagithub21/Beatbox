@@ -8,8 +8,8 @@ const Loader = () => {
       {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num, index) => {
         return (
           <div className="p-2 animate-pulse" key={index}>
-            <div className="h-32 w-32  bg-gray-200 rounded-lg"></div>
-            <div className="h-3 w-32 mt-0.5  bg-gray-200 rounded"></div>
+            <div className="lg:h-32 h-28 w-28 lg:w-32  bg-gray-200 rounded-lg"></div>
+            <div className="h-3 w-32 mt-0.5 hidden lg:block  bg-gray-200 rounded"></div>
           </div>
         );
       })}
