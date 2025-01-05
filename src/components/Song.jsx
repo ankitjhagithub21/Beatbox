@@ -17,7 +17,7 @@ const Song = ({ song,index }) => {
     dispatch(setSongIndex(index))
   }
   return (
-    <div className='lg:w-[220px] md:w-[180px] w-[150px]  cursor-pointer relative' onClick={handleClick}>
+    <div className='w-full  cursor-pointer ' onClick={handleClick}>
       <img src={song.image} alt={song.name} className='rounded-lg' />
      
      <div className='md:block hidden p-1'>

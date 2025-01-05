@@ -4,11 +4,13 @@ import { Navigate, useNavigate } from 'react-router-dom'
 import { FaBookmark, FaDownload} from "react-icons/fa"
 import { setSearchTerm } from '../app/appSlice'
 import toast from 'react-hot-toast'
+import { FaArrowLeft } from "react-icons/fa6";
+
 const SongDetails = () => {
   const { currSong } = useSelector(state => state.app)
   const dispatch = useDispatch()
   const navigate = useNavigate()
- console.log(currSong)
+
   const handleDownload = async () => {
     try {
       const response = await fetch(currSong.downloadUrl);
@@ -49,8 +51,13 @@ const SongDetails = () => {
     return <Navigate to={"/"} />
   }
   return (
-    <section className='py-24 px-4' >
-      <div className='container mx-auto'>
+    <section className='py-24 px-5' >
+
+      <div className='max-w-6xl mx-auto w-full'>
+        <button onClick={()=>navigate(-1)} className='px-4 rounded-full py-2 bg-green-500 text-white mb-5 flex items-center gap-2'>
+        <FaArrowLeft />
+          Back
+          </button>
         <div className='flex flex-wrap justify-center gap-10 mb-10'>
         <div className='md:w-1/3 lg:w-1/4 w-full'>
           <img src={currSong.image} alt={currSong.name} className='rounded-lg border mx-auto' />
