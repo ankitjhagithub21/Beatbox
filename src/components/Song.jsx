@@ -21,8 +21,8 @@ const Song = ({ song,index }) => {
       <img src={song.image} alt={song.name} className='rounded-lg' />
      
      <div className='md:block hidden p-1'>
-     <p className='text-sm'>{song.name.slice(0,28)}</p>
-     <p className='text-xs text-gray-600 font-bold'>{song.artists[0]?.name}</p>
+     <p className='text-sm text-white'>{song.name.slice(0,28)}</p>
+     <p className='text-xs text-white'>{song.artists[0]?.name}</p>
      </div>
 
     </div>

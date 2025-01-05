@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import Song from "./Song";
 import { setPageNumber } from "../app/appSlice";
-
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
 const Slider = ({ songs }) => {
   const dispatch = useDispatch()
@@ -23,8 +23,12 @@ const Slider = ({ songs }) => {
         }
       </div>
       <div className="flex items-center gap-4 justify-center my-5">
-        <button className={`${pageNumber === 1 ? 'bg-indigo-300' :'bg-indigo-500' } text-white px-4 py-2 rounded-lg`} onClick={()=>dispatch(setPageNumber(pageNumber > 1 ? pageNumber-1 : pageNumber))}>Prev</button>
-        <button className="bg-indigo-500 text-white px-4 py-2 rounded-lg" onClick={()=>dispatch(setPageNumber(pageNumber+1))}>Next</button>
+        <button className={`${pageNumber === 1 ? 'bg-green-300' :'bg-green-500' } text-white p-2 rounded-full`} onClick={()=>dispatch(setPageNumber(pageNumber > 1 ? pageNumber-1 : pageNumber))}>
+        <FaArrowLeft />
+        </button>
+        <button className="bg-green-500 text-white p-2 rounded-full" onClick={()=>dispatch(setPageNumber(pageNumber+1))}>
+          <FaArrowRight/>
+        </button>
       </div>
       
     </div>
