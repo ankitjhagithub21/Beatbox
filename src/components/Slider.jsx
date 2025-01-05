@@ -12,7 +12,7 @@ const Slider = ({ songs }) => {
     <div className='flex flex-col items-center gap-5 justify-center my-24 px-5 w-full'>
      
       <div 
-        className='flex flex-wrap container mx-auto justify-center gap-4'
+        className='grid grid-cols-3 lg:grid-cols-5 max-w-6xl mx-auto w-full  gap-4'
         
        
       >

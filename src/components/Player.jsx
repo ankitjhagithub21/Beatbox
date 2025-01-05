@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
 import { setCurrSong, setSongIndex } from '../app/appSlice';
-import { MdSkipNext, MdSkipPrevious } from "react-icons/md";
+
 
 const Player = () => {
   const { currSong, songs, songIndex} = useSelector(state => state.app);

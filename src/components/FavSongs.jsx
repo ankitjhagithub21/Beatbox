@@ -18,12 +18,12 @@ const FavSongs = () => {
 
   return (
     <div className="py-24 px-4">
-      <div className="container mx-auto">
-        <h2 className="text-2xl font-bold mb-5 text-center">Your Favorite Songs</h2>
+      <div className="max-w-6xl mx-auto w-full">
+        <h2 className="text-2xl font-bold mb-5 text-center text-white">Your Favorite Songs</h2>
         {favSongs.length === 0 ? (
-          <p>No favorite songs added yet.</p>
+          <p className='text-white'>No favorite songs added yet.</p>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
+          <div className="grid md:grid-cols-3 grid-cols-1 lg:grid-cols-5 gap-4 ">
             {favSongs.map((song) => (
               <div key={song.id} className="bg-white shadow-lg rounded-lg p-4 cursor-pointer hover:scale-105" >
                 <img src={song.image} alt={song.name} className="rounded-lg mb-4 w-full" onClick={()=>dispatch(setCurrSong(song))}/>
@@ -31,7 +31,7 @@ const FavSongs = () => {
                 <p className="mt-2">Year: {song.year}</p>
                 <button
                   onClick={() => handleRemoveFromFav(song.id)}
-                  className="bg-red-500 text-white rounded-full px-4 py-2 mt-4 flex items-center gap-1"
+                  className="bg-red-500 text-white rounded-full px-3 py-1  text-xs mt-4 flex items-center gap-1"
                 >
                   Remove from Favorites
                 </button>
