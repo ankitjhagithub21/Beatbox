@@ -5,9 +5,8 @@ import { useSelector } from 'react-redux'
 
 
 
-const Home = () => {
-    const {songs} = useSelector(state=>state.app)
-    const loading = useFetchSongs()
+const Home = ({loading,songs}) => {
+    
    
    
      return (
