@@ -28,13 +28,13 @@ const Player = () => {
     dispatch(setCurrSong(songs[newIndex]));
   };
 
-  if (!currSong) return null;
+  
 
   return (
     <div className='fixed bottom-0 w-full'>
       <AudioPlayer
         autoPlay={true}
-        src={currSong.downloadUrl}
+        src={currSong?.downloadUrl}
         showJumpControls={false}
         onClickNext={nextSong}
         onClickPrevious={prevSong}
